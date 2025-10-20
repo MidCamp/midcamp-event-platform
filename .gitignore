@@ -41,6 +41,9 @@
 # custom module, theme, etc., are not ignored unless you purposely do so.
 /vendor/
 
+# Ignore recipes.
+/recipes/
+
 # Ignore scaffold files
 #
 # Note that the scaffold plugin may be used to automatically manage
