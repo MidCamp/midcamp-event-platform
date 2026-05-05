@@ -1,0 +1,23 @@
+uuid: 7c69ab02-dd35-4eb7-98e9-d01d5826c155
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_hackathon
+    - node.type.session
+id: node.session.field_is_hackathon
+field_name: field_is_hackathon
+entity_type: node
+bundle: session
+label: 'Is Hackathon'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

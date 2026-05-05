@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.session.field_description
     - field.field.node.session.field_event
     - field.field.node.session.field_is_contribution_day
+    - field.field.node.session.field_is_hackathon
     - field.field.node.session.field_is_non_session
     - field.field.node.session.field_is_social
     - field.field.node.session.field_is_training
@@ -40,7 +41,7 @@ third_party_settings:
       label: 'Admin Functions'
       region: content
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: fieldset
       format_settings:
         classes: ''
@@ -56,7 +57,7 @@ third_party_settings:
       label: 'Session Metadata'
       region: content
       parent_name: ''
-      weight: 7
+      weight: 8
       format_type: fieldset
       format_settings:
         classes: ''
@@ -78,7 +79,7 @@ content:
     third_party_settings: {  }
   field_description:
     type: text_textarea
-    weight: 5
+    weight: 6
     region: content
     settings:
       rows: 5
@@ -86,7 +87,7 @@ content:
     third_party_settings: {  }
   field_event:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -95,6 +96,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_is_contribution_day:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_is_hackathon:
     type: boolean_checkbox
     weight: 3
     region: content
@@ -110,7 +118,7 @@ content:
     third_party_settings: {  }
   field_is_social:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -124,7 +132,7 @@ content:
     third_party_settings: {  }
   field_notes:
     type: string_textarea
-    weight: 14
+    weight: 15
     region: content
     settings:
       rows: 5
@@ -144,7 +152,7 @@ content:
     third_party_settings: {  }
   field_short_description:
     type: string_textarea
-    weight: 6
+    weight: 7
     region: content
     settings:
       rows: 5
@@ -193,13 +201,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   simple_sitemap:
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -214,7 +222,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -223,7 +231,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }

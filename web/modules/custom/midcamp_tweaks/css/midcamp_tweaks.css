@@ -33,6 +33,10 @@ h1.site-hero__title[class] {
   display: none;
 }
 
+.view-session-list .tabs__tab {
+  display: flex;
+}
+
 /* Styles for the table on /sponsors/sponsor-prospectus page */
 
 table.sponsor_list tr:nth-child(odd) {

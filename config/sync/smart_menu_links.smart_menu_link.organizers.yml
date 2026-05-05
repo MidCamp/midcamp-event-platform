@@ -1,16 +1,14 @@
-uuid: 853949d8-e620-42ee-84c0-5e3fac8aea34
+uuid: 5109c356-4222-4648-b62f-e677058b1b81
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: uXVkgP25AKHR130RrCixaATOL6P9jsY564dntcGLy2E
-id: my_schedule
-label: 'My Schedule'
-link_text: 'My Schedule'
-link_suffix: schedule/mine
+id: organizers
+label: Organizers
+link_text: Organizers
+link_suffix: organizers
 menu_name: main
-parent: 'smart_menu_links:schedule'
-weight: 8
+parent: 'menu_link_content:01f41d4c-3120-400b-a245-48791c4a0d1d'
+weight: 9
 expanded: false
 enabled: true
 target_entity_type: taxonomy_term

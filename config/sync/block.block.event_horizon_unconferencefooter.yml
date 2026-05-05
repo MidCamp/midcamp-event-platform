@@ -1,0 +1,28 @@
+uuid: ea54feed-c754-444a-bea8-89ded02067e7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a6186c27-b422-493e-af86-fd9b93bf7c85'
+  module:
+    - block_content
+    - system
+  theme:
+    - event_horizon
+id: event_horizon_unconferencefooter
+theme: event_horizon
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:a6186c27-b422-493e-af86-fd9b93bf7c85'
+settings:
+  id: 'block_content:a6186c27-b422-493e-af86-fd9b93bf7c85'
+  label: 'Unconference Footer'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/events/*unconference'
