@@ -27,6 +27,7 @@ settings:
   context_mapping: {  }
   views_label: ''
   items_per_page: null
+  exposed: {  }
 visibility:
   user_role:
     id: user_role

@@ -1,16 +1,14 @@
-uuid: 853949d8-e620-42ee-84c0-5e3fac8aea34
+uuid: c88d6807-d117-42fe-83ff-4e32b1982546
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: uXVkgP25AKHR130RrCixaATOL6P9jsY564dntcGLy2E
-id: my_schedule
-label: 'My Schedule'
-link_text: 'My Schedule'
-link_suffix: schedule/mine
+id: socials
+label: Socials
+link_text: Socials
+link_suffix: socials
 menu_name: main
 parent: 'smart_menu_links:schedule'
-weight: 8
+weight: 4
 expanded: false
 enabled: true
 target_entity_type: taxonomy_term

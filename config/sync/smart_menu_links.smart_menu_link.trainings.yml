@@ -9,8 +9,8 @@ label: Trainings
 link_text: Trainings
 link_suffix: trainings
 menu_name: main
-parent: 'menu_link_content:01f41d4c-3120-400b-a245-48791c4a0d1d'
-weight: 0
+parent: 'smart_menu_links:schedule'
+weight: 2
 expanded: false
 enabled: true
 target_entity_type: taxonomy_term

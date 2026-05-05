@@ -1,0 +1,24 @@
+uuid: a04c97c9-12cc-44a4-b7d2-931439fc3a36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_organizations
+    - filter.format.basic_html
+  module:
+    - text
+    - user
+id: user.user.field_organizations
+field_name: field_organizations
+entity_type: user
+bundle: user
+label: Organization(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text

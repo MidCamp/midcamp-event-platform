@@ -5,10 +5,14 @@ dependencies:
   config:
     - field.field.user.user.field_bio
     - field.field.user.user.field_display_name
+    - field.field.user.user.field_lead_events
+    - field.field.user.user.field_organizations
+    - field.field.user.user.field_organize_events
+    - field.field.user.user.field_role
     - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - image.style.large
   module:
-    - image
+    - svg_image
     - text
     - user
 _core:
@@ -23,9 +27,24 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_display_name:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_organizations:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_role:
     type: string
     label: hidden
     settings:
@@ -38,11 +57,17 @@ content:
     label: hidden
     settings:
       image_link: content
-      image_style: thumbnail
+      image_style: large
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  field_lead_events: true
+  field_organize_events: true
   member_for: true

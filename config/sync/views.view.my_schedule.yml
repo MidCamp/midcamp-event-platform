@@ -396,6 +396,10 @@ display:
         options:
           grouping:
             -
+              field: field_when_1
+              rendered: true
+              rendered_strip: false
+            -
               field: field_when
               rendered: true
               rendered_strip: false
@@ -786,7 +790,7 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: string
-          default_action: default
+          default_action: summary
           exception:
             value: all
             title_enable: false
@@ -802,7 +806,7 @@ display:
             anyall: ','
           summary_options:
             base_path: ''
-            count: true
+            count: false
             override: false
             items_per_page: 25
           summary:
@@ -835,7 +839,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: date
-          default_action: default
+          default_action: ignore
           exception:
             value: all
             title_enable: false
@@ -934,7 +938,22 @@ display:
         arguments: false
         filters: false
         filter_groups: false
+        footer: false
       display_description: ''
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<p>\r\n    Can't find what you are looking for? Try one of these areas:\r\n</p>\r\n<ul>\r\n    <li data-list-item-id=\"eec0e1e8ab3707cb4d235bd9b7decd225\">\r\n        <a href=\"/schedule\">Schedule</a>\r\n    </li>\r\n    <li data-list-item-id=\"eadfcc24cddb9eeb5c720b0751fa9f2a4\">\r\n        <a href=\"/hackathon\">Hackathon</a>\r\n    </li>\r\n    <li data-list-item-id=\"e23e2874b3c976f74d81d11d42a384ce7\">\r\n        <a href=\"/trainings\">Trainings</a>\r\n    </li>\r\n    <li data-list-item-id=\"efed500cfbfc59f6f0856a2d49e5facb3\">\r\n        <a href=\"/socials\">Socials</a>\r\n    </li>\r\n    <li data-list-item-id=\"e6baae2b090ee5aad68bb5020adc3739c\">\r\n        <a href=\"/unconference\">Unconference</a>\r\n    </li>\r\n    <li data-list-item-id=\"e0403662e294208225d3d58ff6f7d5300\">\r\n        <a href=\"https://www.midcamp.org/contrib\">Contrib Day</a>\r\n    </li>\r\n    <li data-list-item-id=\"e1a7a2dacd0cfa1f5d357f625a0955b6e\">\r\n        <a href=\"https://www.midcamp.org/topic-tracks\">Topic Tracks</a>\r\n    </li>\r\n    <li data-list-item-id=\"eb14e4053198916262087c623c2d30847\">\r\n        <a href=\"/sessions\">All Sessions</a>\r\n    </li>\r\n</ul>"
+            format: basic_html
+          tokenize: false
       display_extenders:
         views_flag_refresh:
           flags:
