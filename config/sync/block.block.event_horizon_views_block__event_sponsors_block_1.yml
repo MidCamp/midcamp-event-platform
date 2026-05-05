@@ -14,7 +14,7 @@ _core:
 id: event_horizon_views_block__event_sponsors_block_1
 theme: event_horizon
 region: sidebar
-weight: 0
+weight: -12
 provider: null
 plugin: 'views_block:event_sponsors-block_1'
 settings:
@@ -26,6 +26,7 @@ settings:
     tid: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
   views_label: 'Sponsored By'
   items_per_page: null
+  exposed: {  }
 visibility:
   'entity_bundle:taxonomy_term':
     id: 'entity_bundle:taxonomy_term'

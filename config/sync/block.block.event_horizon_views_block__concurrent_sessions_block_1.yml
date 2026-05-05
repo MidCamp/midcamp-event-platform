@@ -15,7 +15,7 @@ _core:
 id: event_horizon_views_block__concurrent_sessions_block_1
 theme: event_horizon
 region: content
-weight: -10
+weight: -12
 provider: null
 plugin: 'views_block:concurrent_sessions-block_1'
 settings:
@@ -27,6 +27,7 @@ settings:
     nid: '@node.node_route_context:node'
   views_label: ''
   items_per_page: null
+  exposed: {  }
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'

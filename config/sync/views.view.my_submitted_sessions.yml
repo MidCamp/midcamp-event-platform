@@ -194,7 +194,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "There were no results. Maybe you're not he user"
+            value: 'No sessions currently exist for this person.'
             format: basic_html
           tokenize: false
       sorts:

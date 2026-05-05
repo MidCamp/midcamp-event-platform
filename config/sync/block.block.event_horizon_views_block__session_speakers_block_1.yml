@@ -15,7 +15,7 @@ _core:
 id: event_horizon_views_block__session_speakers_block_1
 theme: event_horizon
 region: content
-weight: -11
+weight: -13
 provider: null
 plugin: 'views_block:session_speakers-block_1'
 settings:
@@ -26,6 +26,7 @@ settings:
   context_mapping: {  }
   views_label: ''
   items_per_page: null
+  exposed: {  }
 visibility:
   node_moderation_state_condition_moderation_state:
     id: node_moderation_state_condition_moderation_state

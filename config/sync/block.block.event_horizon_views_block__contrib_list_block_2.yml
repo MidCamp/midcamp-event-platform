@@ -1,4 +1,4 @@
-uuid: f5680a01-8a7b-42cc-8fd5-0bdf7d00292a
+uuid: 275fd065-35e7-48e3-b11d-cc109d0fc6c1
 langcode: en
 status: true
 dependencies:
@@ -9,24 +9,24 @@ dependencies:
     - views
   theme:
     - event_horizon
-id: event_horizon_views_block__contrib_list_block_1
+id: event_horizon_views_block__contrib_list_block_2
 theme: event_horizon
 region: sidebar
-weight: -15
+weight: -14
 provider: null
-plugin: 'views_block:contrib_list-block_1'
+plugin: 'views_block:contrib_list-block_2'
 settings:
-  id: 'views_block:contrib_list-block_1'
+  id: 'views_block:contrib_list-block_2'
   label: ''
   label_display: visible
   provider: views
   context_mapping:
     name: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
   views_label: ''
-  items_per_page: 48
+  items_per_page: null
   exposed: {  }
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '/events/*/contrib'
+    pages: '/events/*/hackathon'

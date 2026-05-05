@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.session.field_description
     - field.field.node.session.field_event
     - field.field.node.session.field_is_contribution_day
+    - field.field.node.session.field_is_hackathon
     - field.field.node.session.field_is_non_session
     - field.field.node.session.field_is_social
     - field.field.node.session.field_is_training
@@ -82,6 +83,7 @@ hidden:
   field_description: true
   field_event: true
   field_is_contribution_day: true
+  field_is_hackathon: true
   field_is_non_session: true
   field_is_social: true
   field_is_training: true
