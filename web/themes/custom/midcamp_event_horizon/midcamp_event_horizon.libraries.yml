@@ -21,4 +21,5 @@ global:
     layout:
       css/layout/layout.css: {}
     theme:
+      css/shame.css: {}
       css/theme/print.css: { media: print }
