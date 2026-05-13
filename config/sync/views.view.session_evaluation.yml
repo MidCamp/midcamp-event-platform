@@ -4,8 +4,14 @@ status: true
 dependencies:
   config:
     - user.role.administrator
+    - user.role.anonymous
+    - user.role.authenticated
+    - user.role.content_editor
+    - user.role.organizer
     - user.role.session_moderator
+    - user.role.speaker
     - webform.webform.session_evaluation
+    - webform.webform.session_feedback
   module:
     - user
     - webform
@@ -202,8 +208,13 @@ display:
         type: role
         options:
           role:
+            anonymous: anonymous
+            authenticated: authenticated
+            speaker: speaker
+            content_editor: content_editor
             session_moderator: session_moderator
             administrator: administrator
+            organizer: organizer
       cache:
         type: tag
         options: {  }
@@ -310,7 +321,20 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<style>\r\n:root {\r\n  --gin-color-title: #222330;\r\n  --gin-color-text: #222330;\r\n  --gin-color-text-light: #545560;\r\n  --gin-color-focus: rgba(0, 125, 250, .6);\r\n  --gin-color-focus-border: rgba(0, 0, 0, .2);\r\n  --gin-color-focus-neutral-rgb: rgba(0, 0, 0, .4);\r\n  --gin-color-disabled: #767676;\r\n  --gin-color-disabled-bg: #eaeaea;\r\n  --gin-color-disabled-border: #c2c2c2;\r\n  --gin-color-warning: #d8b234;\r\n  --gin-color-warning-light: #efcf64;\r\n  --gin-bg-warning: #483e1e;\r\n  --gin-bg-warning-light: rgba(226, 151, 0, .08);\r\n  --gin-color-danger: #cc3d3d;\r\n  --gin-color-danger-lightest: #fdd9d9;\r\n  --gin-color-danger-light: #f39b9d;\r\n  --gin-bg-danger: #583333;\r\n  --gin-bg-danger-light: rgba(222, 117, 96, .1);\r\n  --gin-color-green: #058260;\r\n  --gin-color-green-light: #32cea4;\r\n  --gin-color-green-lightest: #adebdb;\r\n  --gin-bg-green: #145242;\r\n  --gin-bg-green-light: rgba(72, 171, 123, .1);\r\n  --gin-color-info: #082538;\r\n  --gin-color-info-light: #589ac5;\r\n  --gin-bg-info: #122b3c;\r\n  --gin-status-text: #626262;\r\n  --gin-status-bg: #eee;\r\n  --gin-status-success-text: #1d6844;\r\n  --gin-status-success-bg: #26a76930;\r\n  --gin-status-warning-text: #826b1f;\r\n  --gin-status-warning-bg: rgba(226, 151, 0, .15);\r\n  --gin-status-danger-text: #cc3d3d;\r\n  --gin-status-danger-bg: rgba(222, 117, 96, .15);\r\n  --gin-color-contextual: var(--gin-color-text);\r\n  --gin-color-contextual-text: #eee;\r\n  --gin-bg-input: #fff;\r\n  --gin-bg-layer: #fff;\r\n  --gin-bg-layer2: #edeff5;\r\n  --gin-bg-layer3: #fff;\r\n  --gin-bg-layer4: #e2e5ec;\r\n  --gin-bg-secondary: var(--gin-bg-layer);\r\n  --gin-bg-header: #eeeff3;\r\n  --gin-bg-unpublished: var(--gin-bg-danger-light);\r\n  --gin-pattern: var(--gin-border-color);\r\n  --gin-pattern-fallback: var(--gin-bg-layer2);\r\n  --gin-pattern-square: .5rem;\r\n  --gin-font: Ginter, Inter, \"Helvetica Neue\", BlinkMacSystemFont, -apple-system, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;\r\n  --gin-font-size-xxs: .75rem;\r\n  --gin-font-size-xs: small;\r\n  --gin-font-size-s: .875rem;\r\n  --gin-font-size: 1rem;\r\n  --gin-font-size-m: var(--gin-font-size);\r\n  --gin-font-size-l: 1.125rem;\r\n  --gin-font-size-xl: 1.25rem;\r\n  --gin-font-size-h3: 1.5rem;\r\n  --gin-font-size-h2: 1.75rem;\r\n  --gin-font-size-h1: 1.6rem;\r\n  --gin-font-size-quote: 1.1em;\r\n  --gin-font-weight-normal: 400;\r\n  --gin-font-weight-semibold: 525;\r\n  --gin-font-weight-bold: 575;\r\n  --gin-font-weight-heavy: 625;\r\n  --gin-spacing-xxxs: .125rem;\r\n  --gin-spacing-xxs: .25rem;\r\n  --gin-spacing-xs: .5rem;\r\n  --gin-spacing-s: .75rem;\r\n  --gin-spacing-m: 1rem;\r\n  --gin-spacing-l: 1.5rem;\r\n  --gin-spacing-xl: 2rem;\r\n  --gin-spacing-xxl: 3rem;\r\n  --gin-spacing-xxxl: 4rem;\r\n  --gin-icon-color: #414247;\r\n  --gin-icon-size-close: 20px;\r\n  --gin-icon-size-toolbar-secondary: 17px;\r\n  --gin-icon-size-toolbar: 17px;\r\n  --gin-icon-size-sidebar-toggle: 21px;\r\n  --gin-border-xxs: .125rem;\r\n  --gin-border-xs: .25rem;\r\n  --gin-border-s: .375rem;\r\n  --gin-border-m: .5rem;\r\n  --gin-border-l: .75rem;\r\n  --gin-border-xl: 1rem;\r\n  --gin-border-color: #d4d4d8;\r\n  --gin-border-color-secondary: rgba(0, 0, 0, .08);\r\n  --gin-border-color-layer: rgba(0, 0, 0, .08);\r\n  --gin-border-color-layer2: #d4d4d8;\r\n  --gin-border-color-table: rgba(0, 0, 0, .1);\r\n  --gin-border-color-table-header: rgba(0, 0, 0, .3);\r\n  --gin-border-color-form-element: #8e929c;\r\n  --size-summary-border-radius: calc(var(--gin-border-m) - 1px);\r\n  --gin-easing: cubic-bezier(.19, 1, .22, 1);\r\n  --gin-transition: .15s var(--gin-easing);\r\n  --gin-transition-fast: .3s var(--gin-easing);\r\n  --gin-shadow-l1: 0 1px 2px rgb(20 45 82 / 2%), 0 3px 4px rgb(20 45 82 / 3%), 0 5px 8px rgb(20 45 82 / 4%);\r\n  --gin-shadow-l2: 0 1px 2px rgb(20 45 82 / 2%), 0 3px 4px rgb(20 45 82 / 3%), 0 5px 8px rgb(20 45 82 / 4%), 0 20px 24px rgb(20 45 82 / 12%);\r\n  --gin-height-sticky: 60px;\r\n  --gin-toolbar-width-collapsed: 66px;\r\n  --gin-toolbar-width: 256px;\r\n  --gin-toolbar-height: 0px;\r\n  --gin-toolbar-secondary-height: 0px;\r\n  --gin-toolbar-bg-level2: #edeff5;\r\n  --gin-toolbar-bg-level3: rgba(44, 45, 47, .05);\r\n  --gin-toolbar-y-offset: 0px;\r\n  --gin-toolbar-x-offset: 0px;\r\n  --gin-scroll-offset: 0px;\r\n  --gin-sticky-offset: 0px;\r\n  --gin-sidebar-small-width: 320px;\r\n  --gin-sidebar-min-width: 240px;\r\n  --gin-sidebar-width: 320px;\r\n  --gin-sidebar-max-width: 560px;\r\n  --gin-sidebar-offset: var(--gin-sidebar-width);\r\n  --gin-switch: #26a769;\r\n  --gin-shadow-button: #00000033;\r\n  --gin-color-button-text: #fff;\r\n  --gin-offset-x: var(--gin-toolbar-x-offset);\r\n  --gin-offset-y: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset));\r\n  --gin-link-decoration-style: dotted;\r\n  --gin-max-line-length: 80ch;\r\n  --input-line-height: var(--gin-spacing-l);\r\n  --input-padding-horizontal: var(--gin-spacing-s);\r\n  --input-padding-vertical: var(--gin-spacing-xs);\r\n  --gin-tooltip-bg: #232429;\r\n  --jui-dialog-z-index: 1260;\r\n}\r\n\r\n@media (min-width: 61em) {\r\n  :root {\r\n    --gin-font-size-h1: 1.8125rem;\r\n    --gin-font-size-quote: 1.2em;\r\n  }\r\n}\r\n\r\n@media (min-width: 90em) {\r\n  :root {\r\n    --gin-font-size-h1: 2.125rem;\r\n  }\r\n}\r\n\r\n@media (min-width: 61em) {\r\n  :root {\r\n    --gin-icon-size-toolbar: 20px;\r\n  }\r\n}\r\n\r\n@media (min-width: 64em) {\r\n  :root {\r\n    --gin-sticky-offset: var(--gin-height-sticky);\r\n  }\r\n}\r\n\r\n@media (min-width: 80em) {\r\n  :root {\r\n    --gin-sidebar-width: 360px;\r\n  }\r\n}\r\n\r\n[data-gin-layout-density=small] {\r\n  --gin-spacing-density-xxs: .15625rem;\r\n  --gin-spacing-density-xs: .3125rem;\r\n  --gin-spacing-density-s: .46875rem;\r\n  --gin-spacing-density-m: .625rem;\r\n  --gin-spacing-density-l: .9375rem;\r\n  --gin-spacing-density-xl: 1.25rem;\r\n  --gin-spacing-density-xxl: 1.875rem;\r\n  --gin-spacing-density-xxxl: 2.5rem;\r\n}\r\n\r\n[data-gin-layout-density=medium] {\r\n  --gin-spacing-density-xxs: .1875rem;\r\n  --gin-spacing-density-xs: .375rem;\r\n  --gin-spacing-density-s: .5625rem;\r\n  --gin-spacing-density-m: .75rem;\r\n  --gin-spacing-density-l: 1.125rem;\r\n  --gin-spacing-density-xl: 1.5rem;\r\n  --gin-spacing-density-xxl: 2.25rem;\r\n  --gin-spacing-density-xxxl: 3rem;\r\n}\r\n\r\n:root {\r\n  --gin-spacing-density-xxs: .25rem;\r\n  --gin-spacing-density-xs: .5rem;\r\n  --gin-spacing-density-s: .75rem;\r\n  --gin-spacing-density-m: 1rem;\r\n  --gin-spacing-density-l: 1.5rem;\r\n  --gin-spacing-density-xl: 2rem;\r\n  --gin-spacing-density-xxl: 3rem;\r\n  --gin-spacing-density-xxxl: 4rem;\r\n}\r\n\r\n.gin--dark-mode {\r\n  --gin-color-title: #fff;\r\n  --gin-color-text: #d2d3d3;\r\n  --gin-color-text-light: #9e9fa0;\r\n  --gin-shadow-button: rgba(#111, .9);\r\n  --gin-color-button-text: #111;\r\n  --gin-color-focus: rgb(81, 168, 255);\r\n  --gin-color-focus-border: rgba(0, 0, 0, .8);\r\n  --gin-color-focus-neutral-rgb: rgba(255, 255, 255, .8);\r\n  --gin-color-disabled: #919191;\r\n  --gin-color-disabled-border: #646464;\r\n  --gin-color-disabled-bg: #47474c;\r\n  --gin-color-warning: #dec15f;\r\n  --gin-bg-warning-light: rgba(222, 193, 95, .1);\r\n  --gin-color-danger: #ce6060;\r\n  --gin-color-danger-lightest: #483439;\r\n  --gin-color-green: #32cea4;\r\n  --gin-color-info: #559bca;\r\n  --gin-bg-input: var(--gin-bg-layer2);\r\n  --gin-bg-app: #1b1b1d;\r\n  --gin-bg-layer: #2a2a2d;\r\n  --gin-bg-layer2: #3b3b3f;\r\n  --gin-bg-layer3: #47474c;\r\n  --gin-bg-layer4: #19191b;\r\n  --gin-bg-secondary: var(--gin-bg-app);\r\n  --gin-bg-unpublished: var(--gin-bg-warning-light);\r\n  --gin-color-contextual: var(--gin-bg-layer3);\r\n  --gin-border-color: #43454a;\r\n  --gin-border-color-secondary: rgba(255, 255, 255, .075);\r\n  --gin-border-color-layer: rgba(0, 0, 0, .05);\r\n  --gin-border-color-layer2: #76777b;\r\n  --gin-border-color-table: #43454a;\r\n  --gin-border-color-table-header: rgba(255, 255, 255, .4);\r\n  --gin-border-color-form-element: var(--gin-border-color-layer2);\r\n  --gin-bg-header: #1b1b1d;\r\n  --gin-switch: var(--gin-color-primary);\r\n  --gin-status-text: #c3cbd0;\r\n  --gin-status-bg: rgba(255, 255, 255, .12);\r\n  --gin-status-success-text: #8bd3b1;\r\n  --gin-status-success-bg: #26a76940;\r\n  --gin-status-warning-text: #e8d185;\r\n  --gin-status-warning-bg: rgba(226, 151, 0, .15);\r\n  --gin-status-danger-text: #e69e9e;\r\n  --gin-status-danger-bg: rgba(222, 117, 96, .15);\r\n  --gin-shadow-l1: 0 1px 2px rgb(0 0 0 / 2%), 0 3px 4px rgb(0 0 0 / 3%), 0 5px 8px rgb(0 0 0 / 4%);\r\n  --gin-shadow-l2: 0 1px 2px rgb(0 0 0 / 2%), 0 3px 4px rgb(0 0 0 / 3%), 0 5px 8px rgb(0 0 0 / 4%), 0 20px 24px rgb(0 0 0 / 12%);\r\n  --gin-icon-color: #888;\r\n  --gin-pattern-fallback: var(--gin-bg-layer2);\r\n  --gin-pattern: var(--gin-border-color);\r\n  --gin-tooltip-bg: var(--gin-bg-layer3);\r\n}\r\n\r\n@media (forced-colors: active) {\r\n  :root {\r\n    --gin-icon-color: CanvasText;\r\n  }\r\n}\r\n\r\n.entity-meta {\r\n  --entity-meta-color-bg: transparent;\r\n  --entity-meta-border-color: var(--gin-border-color);\r\n}\r\n\r\n.accordion {\r\n  --accordion-bg-color: transparent;\r\n  --accordion-border-color: var(--gin-border-color);\r\n}\r\n\r\n[data-gin-accent] {\r\n  --gin-color-primary: rgb(var(--gin-color-primary-rgb));\r\n  --gin-color-primary-light: rgba(var(--gin-color-primary-rgb), .15);\r\n  --gin-bg-app: rgb(var(--gin-bg-app-rgb));\r\n  --gin-bg-layer-rgb: 255, 255, 255;\r\n  --gin-bg-item: rgba(var(--gin-color-primary-rgb), .05);\r\n  --gin-bg-item-hover: rgba(var(--gin-color-primary-rgb), .1);\r\n  --gin-color-primary-light-hover: rgba(var(--gin-color-primary-rgb), .2);\r\n  --gin-color-primary-light-active: rgba(var(--gin-color-primary-rgb), .3);\r\n  --gin-shadow-primary-light: rgba(var(--gin-color-primary-rgb), .45);\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent],\r\n.gin--dark-mode [data-gin-accent] {\r\n  --gin-bg-item-hover: rgba(var(--gin-color-primary-rgb), .08);\r\n  --gin-bg-app-rgb: 27, 27, 29;\r\n  --gin-bg-layer-rgb: 42, 42, 45;\r\n}\r\n\r\n[data-gin-accent=blue] {\r\n  --gin-color-primary-rgb: 5, 80, 230;\r\n  --gin-color-primary-light-rgb: 205, 220, 250;\r\n  --gin-color-primary-hover: #0444c4;\r\n  --gin-color-primary-active: #043cad;\r\n  --gin-bg-app-rgb: 248, 250, 254;\r\n  --gin-bg-header: #e1eafc;\r\n  --gin-color-sticky-rgb: 235, 241, 253;\r\n}\r\n\r\n[data-gin-accent=light_blue] {\r\n  --gin-color-primary-rgb: 47, 109, 208;\r\n  --gin-color-primary-light-rgb: 213, 226, 246;\r\n  --gin-color-primary-hover: #285db1;\r\n  --gin-color-primary-active: #23529c;\r\n  --gin-bg-app-rgb: 249, 251, 254;\r\n  --gin-bg-header: #e6edf9;\r\n  --gin-color-sticky-rgb: 238, 243, 251;\r\n}\r\n\r\n[data-gin-accent=dark_purple] {\r\n  --gin-color-primary-rgb: 67, 0, 191;\r\n  --gin-color-primary-light-rgb: 217, 204, 242;\r\n  --gin-color-primary-hover: #3900a2;\r\n  --gin-color-primary-active: #32008f;\r\n  --gin-bg-app-rgb: 249, 247, 253;\r\n  --gin-bg-header: #e8e0f7;\r\n  --gin-color-sticky-rgb: 240, 235, 250;\r\n  --gin-color-primary-light-hover: rgba(var(--gin-color-primary-rgb), .2);\r\n  --gin-color-primary-light-active: rgba(var(--gin-color-primary-rgb), .25);\r\n  --gin-shadow-primary-light: rgba(var(--gin-color-primary-rgb), .4);\r\n  --gin-bg-item-hover: rgba(var(--gin-color-primary-rgb), .08);\r\n}\r\n\r\n[data-gin-accent=purple] {\r\n  --gin-color-primary-rgb: 91, 0, 255;\r\n  --gin-color-primary-light-rgb: 222, 204, 255;\r\n  --gin-color-primary-hover: #4d00d9;\r\n  --gin-color-primary-active: #4400bf;\r\n  --gin-bg-app-rgb: 250, 247, 255;\r\n  --gin-bg-header: #ebe0ff;\r\n  --gin-color-sticky-rgb: 242, 235, 255;\r\n  --gin-color-primary-light-hover: rgba(var(--gin-color-primary-rgb), .2);\r\n  --gin-color-primary-light-active: rgba(var(--gin-color-primary-rgb), .25);\r\n  --gin-shadow-primary-light: rgba(var(--gin-color-primary-rgb), .4);\r\n  --gin-bg-item-hover: rgba(var(--gin-color-primary-rgb), .08);\r\n}\r\n\r\n[data-gin-accent=teal] {\r\n  --gin-color-primary-rgb: 16, 133, 127;\r\n  --gin-color-primary-light-rgb: 207, 231, 229;\r\n  --gin-color-primary-hover: #0e716c;\r\n  --gin-color-primary-active: #0c645f;\r\n  --gin-bg-app-rgb: 248, 251, 251;\r\n  --gin-bg-header: #e2f0f0;\r\n  --gin-color-sticky-rgb: 236, 245, 245;\r\n}\r\n\r\n[data-gin-accent=green] {\r\n  --gin-color-primary-rgb: 0, 135, 95;\r\n  --gin-color-primary-light-rgb: 204, 231, 223;\r\n  --gin-color-primary-hover: #007351;\r\n  --gin-color-primary-active: #006547;\r\n  --gin-bg-app-rgb: 247, 251, 250;\r\n  --gin-bg-header: #e0f1ec;\r\n  --gin-color-sticky-rgb: 235, 245, 242;\r\n}\r\n\r\n[data-gin-accent=red] {\r\n  --gin-color-primary-rgb: 216, 0, 47;\r\n  --gin-color-primary-light-rgb: 247, 204, 213;\r\n  --gin-color-primary-hover: #b80028;\r\n  --gin-color-primary-active: #a20023;\r\n  --gin-bg-app-rgb: 254, 247, 249;\r\n  --gin-bg-header: #fae0e6;\r\n  --gin-color-sticky-rgb: 252, 235, 238;\r\n}\r\n\r\n[data-gin-accent=orange] {\r\n  --gin-color-primary-rgb: 218, 99, 1;\r\n  --gin-color-primary-light-rgb: 248, 224, 204;\r\n  --gin-color-primary-hover: #b95401;\r\n  --gin-color-primary-active: #a44a01;\r\n  --gin-bg-app-rgb: 254, 250, 247;\r\n  --gin-bg-header: #fbece1;\r\n  --gin-color-sticky-rgb: 252, 243, 235;\r\n}\r\n\r\n[data-gin-accent=yellow] {\r\n  --gin-color-primary-rgb: 179, 122, 0;\r\n  --gin-color-primary-light-rgb: 240, 228, 204;\r\n  --gin-color-primary-hover: #986800;\r\n  --gin-color-primary-active: #865c00;\r\n  --gin-bg-app-rgb: 253, 251, 247;\r\n  --gin-bg-header: #f6efe0;\r\n  --gin-color-sticky-rgb: 249, 244, 235;\r\n}\r\n\r\n[data-gin-accent=pink] {\r\n  --gin-color-primary-rgb: 209, 47, 112;\r\n  --gin-color-primary-light-rgb: 246, 213, 226;\r\n  --gin-color-primary-hover: #b2285f;\r\n  --gin-color-primary-active: #9d2354;\r\n  --gin-bg-app-rgb: 254, 249, 251;\r\n  --gin-bg-header: #f9e6ee;\r\n  --gin-color-sticky-rgb: 251, 238, 244;\r\n}\r\n\r\n[data-gin-accent=neutral] {\r\n  --gin-color-primary-rgb: 17, 17, 17;\r\n  --gin-color-primary-light-rgb: 207, 207, 207;\r\n  --gin-color-primary-hover: #0e0e0e;\r\n  --gin-color-primary-active: #0d0d0d;\r\n  --gin-bg-app-rgb: 248, 248, 248;\r\n  --gin-bg-header: #e2e2e2;\r\n  --gin-color-sticky-rgb: 236, 236, 236;\r\n}\r\n\r\n[data-gin-accent=custom] {\r\n  --gin-color-primary-rgb: 17, 17, 17;\r\n  --gin-color-primary-light-rgb: 207, 207, 207;\r\n  --gin-color-primary-hover: #0e0e0e;\r\n  --gin-color-primary-active: #0d0d0d;\r\n  --gin-bg-app-rgb: 248, 248, 248;\r\n  --gin-bg-header: #e2e2e2;\r\n  --gin-color-sticky-rgb: 236, 236, 236;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=blue],\r\n.gin--dark-mode [data-gin-accent=blue] {\r\n  --gin-color-primary-rgb: 144, 174, 239;\r\n  --gin-color-primary-light-rgb: 62, 68, 84;\r\n  --gin-color-primary-hover: #9bb6f1;\r\n  --gin-color-primary-active: #a1baf1;\r\n  --gin-bg-header: #373b45;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=claro_blue],\r\n.gin--dark-mode [data-gin-accent=claro_blue] {\r\n  --gin-color-primary-rgb: 115, 145, 216;\r\n  --gin-color-primary-light-rgb: 57, 63, 79;\r\n  --gin-color-primary-hover: #819cdc;\r\n  --gin-color-primary-active: #88a2de;\r\n  --gin-bg-header: #333742;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=light_blue],\r\n.gin--dark-mode [data-gin-accent=light_blue] {\r\n  --gin-color-primary-rgb: 130, 191, 232;\r\n  --gin-color-primary-light-rgb: 60, 72, 82;\r\n  --gin-color-primary-hover: #8fc5ea;\r\n  --gin-color-primary-active: #95c9eb;\r\n  --gin-bg-header: #353d44;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=dark_purple],\r\n.gin--dark-mode [data-gin-accent=dark_purple] {\r\n  --gin-color-primary-rgb: 173, 143, 232;\r\n  --gin-color-primary-light-rgb: 68, 62, 82;\r\n  --gin-color-primary-hover: #b59aea;\r\n  --gin-color-primary-active: #b9a0eb;\r\n  --gin-bg-header: #3a3744;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=purple],\r\n.gin--dark-mode [data-gin-accent=purple] {\r\n  --gin-color-primary-rgb: 219, 165, 239;\r\n  --gin-color-primary-light-rgb: 77, 67, 84;\r\n  --gin-color-primary-hover: #dfaef1;\r\n  --gin-color-primary-active: #e0b3f1;\r\n  --gin-bg-header: #403945;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=teal],\r\n.gin--dark-mode [data-gin-accent=teal] {\r\n  --gin-color-primary-rgb: 0, 234, 208;\r\n  --gin-color-primary-light-rgb: 34, 80, 78;\r\n  --gin-color-primary-hover: #1aecd5;\r\n  --gin-color-primary-active: #26edd7;\r\n  --gin-bg-header: #254241;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=green],\r\n.gin--dark-mode [data-gin-accent=green] {\r\n  --gin-color-primary-rgb: 107, 212, 161;\r\n  --gin-color-primary-light-rgb: 55, 76, 68;\r\n  --gin-color-primary-hover: #7ad8aa;\r\n  --gin-color-primary-active: #81daaf;\r\n  --gin-bg-header: #323f3c;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=red],\r\n.gin--dark-mode [data-gin-accent=red] {\r\n  --gin-color-primary-rgb: 236, 137, 137;\r\n  --gin-color-primary-light-rgb: 81, 61, 63;\r\n  --gin-color-primary-hover: #ee9595;\r\n  --gin-color-primary-active: #ef9b9b;\r\n  --gin-bg-header: #423639;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=orange],\r\n.gin--dark-mode [data-gin-accent=orange] {\r\n  --gin-color-primary-rgb: 247, 149, 118;\r\n  --gin-color-primary-light-rgb: 83, 63, 60;\r\n  --gin-color-primary-hover: #f8a084;\r\n  --gin-color-primary-active: #f8a58b;\r\n  --gin-bg-header: #443736;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=yellow],\r\n.gin--dark-mode [data-gin-accent=yellow] {\r\n  --gin-color-primary-rgb: 241, 201, 112;\r\n  --gin-color-primary-light-rgb: 82, 74, 58;\r\n  --gin-color-primary-hover: #f2ce7e;\r\n  --gin-color-primary-active: #f3d185;\r\n  --gin-bg-header: #433e35;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=pink],\r\n.gin--dark-mode [data-gin-accent=pink] {\r\n  --gin-color-primary-rgb: 231, 157, 163;\r\n  --gin-color-primary-light-rgb: 80, 65, 69;\r\n  --gin-color-primary-hover: #e9a7ac;\r\n  --gin-color-primary-active: #ebacb1;\r\n  --gin-bg-header: #42383c;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=neutral],\r\n.gin--dark-mode [data-gin-accent=neutral] {\r\n  --gin-color-primary-rgb: 255, 255, 255;\r\n  --gin-color-primary-light-rgb: 85, 85, 87;\r\n  --gin-color-primary-hover: white;\r\n  --gin-color-primary-active: white;\r\n  --gin-bg-header: #454547;\r\n}\r\n\r\n.gin--dark-mode[data-gin-accent=custom],\r\n.gin--dark-mode [data-gin-accent=custom] {\r\n  --gin-color-primary-rgb: 255, 255, 255;\r\n  --gin-color-primary-light-rgb: 85, 85, 87;\r\n  --gin-color-primary-hover: white;\r\n  --gin-color-primary-active: white;\r\n  --gin-bg-header: #454547;\r\n}\r\n\r\n@media (forced-colors: none) {\r\n  .gin--high-contrast-mode {\r\n    --gin-bg-app: #d9dbde;\r\n    --gin-color-text: rgba(0, 0, 0, .8);\r\n    --gin-color-text-light: rgba(0, 0, 0, .8);\r\n    --gin-icon-color: rgba(0, 0, 0, .8);\r\n    --gin-color-focus: rgba(0, 0, 0, .8);\r\n    --gin-border-color: rgba(0, 0, 0, .8);\r\n    --gin-border-color-secondary: rgba(0, 0, 0, .6);\r\n    --gin-border-color-layer: rgba(0, 0, 0, .6);\r\n    --gin-border-color-layer2: rgba(0, 0, 0, .8);\r\n    --gin-border-color-table: rgba(0, 0, 0, .8);\r\n    --gin-border-color-table-header: rgba(0, 0, 0, .8);\r\n    --gin-border-color-form-element: rgba(0, 0, 0, .8);\r\n  }\r\n\r\n  .gin--dark-mode .gin--high-contrast-mode {\r\n    --gin-bg-app: #000;\r\n    --gin-color-text: rgba(255, 255, 255, .8);\r\n    --gin-color-text-light: rgba(255, 255, 255, .8);\r\n    --gin-icon-color: rgba(255, 255, 255, .8);\r\n    --gin-color-focus: rgba(255, 255, 255, .8);\r\n    --gin-border-color: rgba(255, 255, 255, .8);\r\n    --gin-border-color-secondary: rgba(255, 255, 255, .6);\r\n    --gin-border-color-layer: rgba(255, 255, 255, .6);\r\n    --gin-border-color-layer2: rgba(255, 255, 255, .8);\r\n    --gin-border-color-table: rgba(255, 255, 255, .8);\r\n    --gin-border-color-table-header: rgba(255, 255, 255, .8);\r\n    --gin-border-color-form-element: rgba(255, 255, 255, .8);\r\n  }\r\n}\r\n\r\n[data-gin-focus=green] {\r\n  --gin-color-focus: rgba(8, 163, 144, .6);\r\n}\r\n\r\n[data-gin-focus=claro] {\r\n  --gin-color-focus: rgba(38, 167, 105, .6);\r\n}\r\n\r\n[data-gin-focus=orange] {\r\n  --gin-color-focus: rgba(236, 124, 87, .6);\r\n}\r\n\r\n[data-gin-focus=dark] {\r\n  --gin-color-focus: var(--gin-color-focus-neutral-rgb);\r\n}\r\n\r\n[data-gin-focus=accent] {\r\n  --gin-color-focus: rgba(var(--gin-color-primary-rgb), .6);\r\n}\r\n\r\n</style>"
+            format: full_html
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -338,4 +362,369 @@ display:
         - url
         - user
         - user.roles
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: Block
+    display_plugin: block
+    position: 1
+    display_options:
+      title: 'Session Feedback'
+      fields:
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<h3>Your Feedback</h3>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        edit_webform_submission:
+          id: edit_webform_submission
+          table: webform_submission
+          field: edit_webform_submission
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: webform_submission
+          plugin_id: entity_link_edit
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: edit
+          output_url_as_text: false
+          absolute: false
+        webform_submission_value:
+          id: webform_submission_value
+          table: webform_submission_field_session_feedback_ratings
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: webform_submission_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: list
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          webform_check_access: 1
+        webform_submission_value_1:
+          id: webform_submission_value_1
+          table: webform_submission_field_session_feedback_additional_feedback
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: webform_submission_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          webform_check_access: 1
+      access:
+        type: none
+        options: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: '<a class="use-ajax button button--primary" data-dialog-options="{&quot;width&quot;:600}" data-dialog-type="modal" href="/form/session-feedback?session={{ arguments.webform_submission_value }}">Give feedback on this session</a>'
+          tokenize: true
+      arguments:
+        uid:
+          id: uid
+          table: webform_submission
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: webform_submission
+          entity_field: uid
+          plugin_id: entity_target_id
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: current_user
+          default_argument_options: {  }
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+        webform_submission_value:
+          id: webform_submission_value
+          table: webform_submission_field_session_feedback_session
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: node
+          default_argument_options: {  }
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+      filters:
+        webform_id_1:
+          id: webform_id_1
+          table: webform_submission
+          field: webform_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: webform_submission
+          entity_field: webform_id
+          plugin_id: bundle
+          operator: in
+          value:
+            session_feedback: session_feedback
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        empty: false
+        access: false
+        title: false
+        fields: false
+        arguments: false
+        filters: false
+        filter_groups: false
+      display_extenders:
+        views_flag_refresh:
+          flags: {  }
+          noscrolltop: 0
+      block_description: 'Session Feedback'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - user
       tags: {  }

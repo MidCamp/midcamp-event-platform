@@ -46,6 +46,7 @@ permissions:
   - 'delete own files'
   - 'delete own page content'
   - 'delete page revisions'
+  - 'edit any page content'
   - 'edit field_is_contribution_day'
   - 'edit field_is_hackathon'
   - 'edit field_is_non_session'

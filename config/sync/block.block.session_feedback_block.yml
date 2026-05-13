@@ -1,26 +1,24 @@
-uuid: d5015b53-096e-493b-9515-c75a41a8892c
+uuid: 3af0edc4-8dbd-4c6f-8848-cfbc8873e492
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.job_listings
+    - views.view.session_evaluation
   module:
     - node
     - views
   theme:
     - event_horizon
-_core:
-  default_config_hash: vcBEpCq7fZ0wFry8dVc8J77rNLDUrF5frYLr4Hd18fE
-id: event_horizon_views_block__job_listings_block_1
+id: session_feedback_block
 theme: event_horizon
-region: content
-weight: -15
+region: content_above
+weight: 0
 provider: null
-plugin: 'views_block:job_listings-block_1'
+plugin: 'views_block:session_evaluation-block_2'
 settings:
-  id: 'views_block:job_listings-block_1'
+  id: 'views_block:session_evaluation-block_2'
   label: ''
-  label_display: visible
+  label_display: '0'
   provider: views
   context_mapping: {  }
   views_label: ''
@@ -33,4 +31,4 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      sponsor: sponsor
+      session: session
