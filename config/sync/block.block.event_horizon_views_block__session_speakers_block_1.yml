@@ -15,7 +15,7 @@ _core:
 id: event_horizon_views_block__session_speakers_block_1
 theme: event_horizon
 region: content
-weight: -13
+weight: -12
 provider: null
 plugin: 'views_block:session_speakers-block_1'
 settings:
