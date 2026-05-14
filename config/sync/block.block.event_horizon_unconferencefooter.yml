@@ -12,7 +12,7 @@ dependencies:
 id: event_horizon_unconferencefooter
 theme: event_horizon
 region: content
-weight: 0
+weight: -6
 provider: null
 plugin: 'block_content:a6186c27-b422-493e-af86-fd9b93bf7c85'
 settings:

@@ -1,4 +1,4 @@
-uuid: 15701088-b1d9-40b0-8a3d-8dd8353a33c6
+uuid: 16de5894-3f28-4801-9a95-d36787e1f84b
 langcode: en
 status: open
 dependencies: {  }
@@ -7,11 +7,11 @@ _core:
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 2
 template: false
 archive: false
-id: session_evaluation
-title: 'Session Evaluation'
+id: session_feedback
+title: 'Session Feedback'
 description: ''
 categories: {  }
 elements: |-
@@ -20,10 +20,6 @@ elements: |-
     '#title': Session
     '#prepopulate': true
     '#required': true
-    '#unique': true
-    '#unique_entity': true
-    '#unique_user': true
-    '#unique_error': 'You have already evaluated this session! Please edit your existing evaluation or edit a different session.'
     '#target_type': node
     '#selection_handler': 'default:node'
     '#selection_settings':
@@ -33,10 +29,13 @@ elements: |-
     '#type': webform_likert
     '#title': Ratings
     '#questions':
-      'Importance of topic': 'Importance of topic'
-      Originality: Originality
-      Authority: Authority
+      'This session was interesting': 'This session was interesting'
+      'The presenter presented well': 'The presenter presented well'
+      "I'm happy I went to the session": "I'm happy I went to the session"
     '#answers': likert_ten_scale
+  additional_feedback:
+    '#type': textarea
+    '#title': 'Additional Feedback'
   captcha:
     '#type': captcha
 css: ''
@@ -56,7 +55,7 @@ settings:
   form_open_message: ''
   form_close_message: ''
   form_exception_message: ''
-  form_previous_submissions: true
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
   form_disable_remote_addr: false
@@ -80,6 +79,7 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_file_limit_message: ''
   form_attributes: {  }
   form_method: ''
   form_action: ''
@@ -98,7 +98,7 @@ settings:
   submission_views: {  }
   submission_views_replace: {  }
   submission_user_columns: {  }
-  submission_user_duplicate: false
+  submission_user_duplicate: true
   submission_access_denied: default
   submission_access_denied_title: ''
   submission_access_denied_message: ''
@@ -178,8 +178,8 @@ settings:
 access:
   create:
     roles:
-      - session_moderator
-      - administrator
+      - anonymous
+      - authenticated
     users: {  }
     permissions: {  }
   view_any:
