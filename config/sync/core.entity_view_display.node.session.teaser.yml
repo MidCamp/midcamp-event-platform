@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.session.field_is_training
     - field.field.node.session.field_notes
     - field.field.node.session.field_r
+    - field.field.node.session.field_recording
     - field.field.node.session.field_session_category
     - field.field.node.session.field_short_description
     - field.field.node.session.field_social_media_card
@@ -88,6 +89,7 @@ hidden:
   field_is_social: true
   field_is_training: true
   field_notes: true
+  field_recording: true
   field_social_media_card: true
   field_ticket_link: true
   field_time_slot: true

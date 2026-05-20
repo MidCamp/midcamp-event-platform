@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.session.field_is_training
     - field.field.node.session.field_notes
     - field.field.node.session.field_r
+    - field.field.node.session.field_recording
     - field.field.node.session.field_session_category
     - field.field.node.session.field_short_description
     - field.field.node.session.field_social_media_card
@@ -42,21 +43,21 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_description:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_notes:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_r:
     type: entity_reference_label
@@ -64,7 +65,16 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  field_recording:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_session_category:
     type: entity_reference_label
@@ -72,7 +82,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_ticket_link:
     type: link_class
@@ -85,7 +95,7 @@ content:
       rel: '0'
       target: _blank
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_time_slot:
     type: entity_reference_label
@@ -93,12 +103,12 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   flag_my_schedule:
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   flippy_pager:
     settings: {  }
