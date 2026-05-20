@@ -28,6 +28,7 @@ permissions:
   - 'search content'
   - 'use text format restricted_html'
   - 'view field_r'
+  - 'view field_recording'
   - 'view field_ticket_link'
   - 'view field_time_slot'
   - 'view media'
