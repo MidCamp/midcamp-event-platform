@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: YLRHdkctJfFq-QZDjq2WLnO9qdI5lfp7vlqR8I9Xol8
 id: schedule
-label: Schedule
+label: '2026 Schedule'
 link_text: Schedule
 link_suffix: schedule
 menu_name: main

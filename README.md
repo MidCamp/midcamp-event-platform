@@ -80,6 +80,13 @@ Set up an account and ssh key for [Amazee.io Lagoon](https://dashboard.amazeeio.
 
 ## Common Development Tasks
 
+### Syncing environment from prod to dev
+
+```bash
+ddev pull lagoon --skip-files
+ddev push lagoon --environment=LAGOON_ENVIRONMENT=dev --skip-files
+```
+
 ### Accessing the remote
 
 ```bash
@@ -132,8 +139,6 @@ ddev drush config:import
 # or
 ddev drush cim
 ```
-
-**Note:** Configuration import is currently commented out in `.lagoon.yml` post-rollout tasks. Enable it once config sync is properly set up.
 
 ### Accessing the Site
 
