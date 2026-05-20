@@ -1,0 +1,29 @@
+uuid: 237e4e25-3587-4a11-962e-03a2244b7a0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recording
+    - media.type.remote_video
+    - node.type.session
+id: node.session.field_recording
+field_name: field_recording
+entity_type: node
+bundle: session
+label: Recording
+description: "Add the session recording here after it's been presented. You did push the big red button, right?"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: image
+field_type: entity_reference
