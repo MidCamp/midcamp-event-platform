@@ -72,6 +72,7 @@
             "php-http/discovery": true,
             "php-tuf/composer-integration": true,
             "phpstan/extension-installer": true,
+            "symfony/runtime": true,
             "wikimedia/composer-merge-plugin": true
         },
         "sort-packages": true
