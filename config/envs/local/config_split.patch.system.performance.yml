@@ -1,6 +1,12 @@
 adding:
   css:
     preprocess: false
+    compress: false
+  js:
+    compress: false
 removing:
   css:
     preprocess: true
+    gzip: true
+  js:
+    gzip: true

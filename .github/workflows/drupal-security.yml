@@ -1,0 +1,19 @@
+name: Drupal security advisory
+
+on:
+  repository_dispatch:
+    types:
+      - drupal-security-advisory
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # A rapid advisory recovery must not replace an older pending dispatch.
+  group: drupal-security-${{ github.event_name == 'repository_dispatch' && github.run_id || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  inspect-and-audit:
+    uses: sdubois/drupal-security-actions/.github/workflows/receiver.yml@v1
